@@ -1,3 +1,34 @@
+//CLASSE CONTATO------------------------------------
+class Contato {
+  constructor(id, nome, telefone) {
+    this.id = id;
+    this.nome = nome;
+    this.telefone = telefone;
+  }
+
+  getId() {
+    return this.id;
+  }
+
+  getNome() {
+    return this.nome;
+  }
+
+  mostraRegistro() {
+    return (
+      "ID: " +
+      this.id +
+      "\nNome: " +
+      this.nome +
+      "\nNumero: " +
+      this.telefone +
+      "\n--------------------------------\n"
+    );
+  }
+}
+
+//CLASSE AGENDA ----------------------------
+
 var lista = [];
 
 function inserir() {
@@ -15,6 +46,7 @@ function remover() {
       lista.splice(i, 1);
     }
   }
+  document.getElementById("cont").innerText = "REMOVIDO";
 }
 
 function buscar() {
@@ -27,34 +59,16 @@ function buscar() {
 }
 
 function listar() {
+  lista.sort(function (a, b) {
+    if (a.getNome() < b.getNome()) return -1;
+    if (a.getNome() > b.getNome()) return 1;
+    return 0;
+  });
+
   document.getElementById("cont").innerText = "";
   for (let i = 0; i <= lista.length; i++) {
     var escrita = document.getElementById("cont").innerText;
     document.getElementById("cont").innerText =
       escrita + "\n" + lista[i].mostraRegistro();
-  }
-}
-
-class Contato {
-  constructor(id, nome, telefone) {
-    this.id = id;
-    this.nome = nome;
-    this.telefone = telefone;
-  }
-
-  getId() {
-    return this.id;
-  }
-
-  mostraRegistro() {
-    return (
-      "ID: " +
-      this.id +
-      "\nNome: " +
-      this.nome +
-      "\nNumero: " +
-      this.telefone +
-      "\n--------------------------------\n"
-    );
   }
 }
