@@ -5,5 +5,5 @@
   <img align="center" alt="Ric-CSS" height="45" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="Ric-Js" height="45" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
 </div>
-
+<br>
 Site básico para guardar, buscar e excluir contatos telefônicos.
